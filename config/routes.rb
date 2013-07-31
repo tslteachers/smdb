@@ -1,4 +1,8 @@
 Smdb::Application.routes.draw do
+
+  # get "/" => "movies#index"
+  root "movies#index"
+
   # Routes for the Actor resource:
   # CREATE
   get '/actors/new', controller: 'actors', action: 'new', as: 'new_actor'
@@ -107,7 +111,7 @@ Smdb::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
