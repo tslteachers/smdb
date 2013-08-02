@@ -1,4 +1,6 @@
 class Movie < ActiveRecord::Base
+  validates :title, :uniqueness => true, :presence => true
+  validates :director_id, :presence => true
   # belongs to director
 
   # The short Rails way
