@@ -1,5 +1,12 @@
 <h1>Movie #<%= @movie.id %></h1>
 
+<%= form_tag votes_url, :class => "form-horizontal" do %>
+  <%= hidden_field_tag :movie_id, @movie.id %>
+
+  <%= select_tag :user_id, options_from_collection_for_select(User.order("name"), :id, :name) %>
+  <%= submit_tag "Create Vote", :class => "btn btn-success" %>
+<% end %>
+
 <p>
   <b>Title:</b>
   <%= @movie.title %>
